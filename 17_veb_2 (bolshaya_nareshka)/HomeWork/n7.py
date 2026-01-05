@@ -1,0 +1,15 @@
+f = open('D:/INF_tasks/tasks17_bolshaya_nareshka/17-1__7byb8.txt')
+a = [int(i) for i in f]
+c = 0
+mx = -10000000000000000000000000
+k7 = max([g for g in a if str(abs(g))[-1] == '7'])
+
+for i in range(len(a)-2):
+    t = a[i:i+3]
+    c1 = len([g for g in t if (abs(g) % 10 == 7) and (len(str(abs(g))) == 3)])
+
+    if ( (str(abs(a[i])))[0] == (str(abs(a[i+1])))[0] == (str(abs(a[i+2])))[0] ) and (c1 >= 1) and (abs(sum(t)) < k7):
+        c += 1
+        mx = max(mx, abs(sum(t)))
+
+print(c, mx)
