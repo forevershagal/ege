@@ -1,4 +1,4 @@
-f = open('smth')
+f = open('D:/INF_tasks/task_24_ukazat/24_18__3b9tx.txt')
 s = f.readline()
 
 start = mx = cF = cL = 0
@@ -11,9 +11,9 @@ for end in range(len(s)):
 
     while cF > 3 or cL > 3:
         if s[start] == 'F':
-            cF += 1
+            cF -= 1
         if s[start] == 'L':
-            cL += 1
+            cL -= 1
 
         start += 1
 

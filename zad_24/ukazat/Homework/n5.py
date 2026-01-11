@@ -1,4 +1,4 @@
-f = open('smth')
+f = open('D:/INF_tasks/task_24_ukazat/24_4__3b9tg.txt')
 s = f.readline()
 
 mx = start = cD = 0
