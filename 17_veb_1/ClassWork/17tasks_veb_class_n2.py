@@ -3,7 +3,6 @@ c = 0
 for i in f:
     a = sorted(map(int, i.split(',')))
 
-
     c1 = len([j for j in a if j % 2 == 0])
     c2 = len([j for j in a if j % 2 != 0])
 
