@@ -19,4 +19,3 @@ for x in range(182635, 453734):
 
 
 print(len(l), max(l) + min(l))
-

@@ -1,5 +1,5 @@
 cnt = 0
-for x in range(856789,1561024):
+for x in range(856789, 1561024):
     c = set()
     for i in range(2, int(x**0.5)+1):
         if x % i == 0:
