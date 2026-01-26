@@ -17,3 +17,24 @@ def game(first_heap): # Функция игры
 for i in range(1,38):
     if game(i) == 1: # Если в данной позиции Петя побеждает первым ходом
         print(i)
+
+
+
+
+# from functools import lru_cache
+#
+# @lru_cache(None)
+# def game(first_heap):
+#     if first_heap >= 39:
+#         return 0
+#
+#     moves = [game(first_heap+1), game(first_heap+2), game(first_heap*2)]
+#     petya_win = [i for i in moves if i <= 0]
+#     if petya_win:
+#         return -max(petya_win)+1
+#     else:
+#         return -max(moves)
+#
+# for i in range(1, 38):
+#     if game(i) == 1:
+#         print(i)

@@ -9,17 +9,21 @@
 # # print(int('00010000', 2))
 # # print(int('00000000', 2))
 
-from itertools import product
+# from itertools import product
+#
+# ans = set()
+# alf = 'ПОЛИНА'
+#
+# for w in product(alf, repeat=6):
+#     w = "".join(w)
+#     if (w.count('Л')) <= 1 and(w[0] != 'Л') and (w[-1] != 'Л') and ('ЛА' not in w) and ('АЛ' not in w):
+#         ans.add(w)
+#
+# print(len(ans))
 
-ans = set()
-alf = 'ПОЛИНА'
-
-for w in product(alf, repeat=6):
-    w = "".join(w)
-    if (w.count('Л')) <= 1 and(w[0] != 'Л') and (w[-1] != 'Л') and ('ЛА' not in w) and ('АЛ' not in w):
-        ans.add(w)
-
-print(len(ans))
 
 
+
+
+for i in range(1, int(x**0.5)+1):
 

@@ -4,8 +4,8 @@ def f(n, osn):
     s = ''
     while n > 0:
         s += str(n % osn)
-        n // osn
-    s = s[::1]
+        n //= osn
+    s = s[::-1]
     return s
 
 a = set()

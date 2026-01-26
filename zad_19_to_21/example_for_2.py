@@ -29,3 +29,26 @@ for i in range(1,187):
         break
 
 
+
+# from functools import lru_cache
+#
+# @lru_cache(None)
+# def game(first, second, cnt=0):
+#     if first * second >= 2048:
+#         return 0
+#
+#     if cnt > 6:
+#         return 10 ** 10
+#
+#     moves = [game(first, second+1, cnt + 1), game(first+1, second, cnt + 1),
+#              game(first*2, second, cnt+1), game(first, second*2, cnt+1)]
+#     petya_win = [i for i in moves if i <= 0]
+#     if petya_win:
+#         return -max(petya_win)+1
+#     else:
+#         return -max(moves)
+#
+#
+# for i in range(1, 187):
+#     if game(11, i, 0) == -1:
+#         print(i)
