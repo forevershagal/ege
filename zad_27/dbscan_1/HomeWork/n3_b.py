@@ -1,6 +1,6 @@
 from math import dist
 
-f = open('D:/INF_tasks/tasks27_dbscan_dz/3B__5qktg.txt')  # предположим такое название
+f = open('D:/INF_tasks/tasks27_dbscan_dz/3B__5qktg.txt')
 t = f.readline()
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
 
