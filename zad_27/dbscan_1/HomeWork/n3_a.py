@@ -3,7 +3,7 @@ from turtle import *
 
 m = 20
 
-f = open('D:/INF_tasks/tasks27_dbscan_dz/3A__5qkte.txt')
+f = open('D:/INF_tasks/tasks27_dbscan_dz/3B__5qktg.txt')
 t = f.readline()
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
 
