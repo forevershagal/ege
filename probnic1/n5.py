@@ -2,7 +2,7 @@ def f(n, osn):
     s = ''
     while n > 0:
         s += str(n % osn)
-        n  = n // osn
+        n = n // osn
     s = s[::-1]
     return s
 

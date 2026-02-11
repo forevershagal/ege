@@ -20,7 +20,7 @@ for n in range(1, 200):
             mult *= i
 
     if mult % 3 == 0:
-        s  = s + '21'
+        s = s + '21'
 
     if mult % 3 != 0:
         s = s + '12'
@@ -31,3 +31,5 @@ for n in range(1, 200):
         a.add(r)
 
 print(max(a))
+
+
