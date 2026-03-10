@@ -2,7 +2,7 @@ from math import dist
 from turtle import *
 
 
-f = open('smth')
+f = open('D:/INF_tasks/27_dz_dbscan/27Б__7rojd.txt')
 l = f.readline()
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
 
@@ -27,7 +27,7 @@ for cl in clusters:
             s += dist(star, center)
         if s < mn:
             mn = s
-            centroid = star
+            centroid = center
     px += centroid[0]
     py += centroid[1]
 

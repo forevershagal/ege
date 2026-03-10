@@ -1,13 +1,12 @@
 from math import dist
 from turtle import *
 
-f = open('smth')
-l = f.readline()
+f = open('D:/INF_tasks/27_dz_dbscan/3_A__5pzlk.txt')
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
 clusters = [[] for i in range(6)]
 
 for x, y in a:
-    if (0.48 * x + 7.6 > y ) and (y > 13):
+    if (0.48 * x + 7.6 > y) and (y > 13):
         clusters[0].append([x, y])
     elif 0.48 * x + 7.6 > y and x > 20:
         clusters[1].append([x, y])

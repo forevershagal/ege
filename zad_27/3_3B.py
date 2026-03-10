@@ -1,7 +1,7 @@
 from math import dist
 from turtle import *
 
-f = open('smth')
+f = open('D:/INF_tasks/27_dz_dbscan/3_B__5pzln.txt')
 l = f.readline()
 a = [list(map(float, i.replace(',', '').split())) for i in f]
 clusters = [[] for i in range(5)]
