@@ -8,5 +8,4 @@ def f(n):
     else:
         return n + f(n + 2)
 
-
 print(f(2022) - f(2023))
