@@ -2,8 +2,6 @@ from math import dist
 from math import sqrt
 from turtle import *
 
-
-
 f = open('D:/INF_tasks/27_dz_dbscan/27_B__8vcrx.txt')
 l = f.readline()
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
@@ -22,11 +20,11 @@ for x, y in a:
 farthest = (0, 0)
 closest = (0, 0)
 max_dist = 0
-mn_dist = 10**20
+mn_dist = 10 ** 20
 
 for i in range(len(clusters)):
     center = (0, 0)
-    mn = 10**20
+    mn = 10 ** 20
     for j in clusters[i]:
         s = 0
         for star in clusters[i]:
@@ -35,11 +33,11 @@ for i in range(len(clusters)):
             mn = s
             center = j
     distance = dist((0, 0), center)
-    if distance > mn_dist:
+    if distance < mn_dist:
         mn_dist = distance
         closest = center
     if distance > max_dist:
         max_dist = distance
         farthest = center
 
-print(int(abs(farthest[0] * 10000)), int(abs(closest[0] * 10000)))
+print(int(abs(farthest[0] * 10000)), int(abs(closest[1] * 10000)))

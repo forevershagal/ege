@@ -1,8 +1,6 @@
 from math import dist
 from turtle import *
 
-from probnic1.n24 import start
-
 f = open('D:/INF_tasks/27_dz_dbscan/27_A__8vcrw.txt')
 s = f.readline()
 a = [list(map(float, i.replace(',', '.').split())) for i in f]
@@ -30,5 +28,5 @@ for i in range(len(clusters)):
 
 if len(clusters[1]) < len(clusters[0]):
     p[0], p[1] = p[1], p[0]
-    print(int(abs(p[0]*10000)), int(abs(p[1]*10000)))
+print(int(abs(p[0]*10000)), int(abs(p[1]*10000)))
 
