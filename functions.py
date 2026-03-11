@@ -51,7 +51,6 @@ def dbscan(a, r):
     while a:
         # Извлекаем первую точку из 'a' и создаем новый кластер
         cl.append([a.pop(0)])
-
         # Перебираем точки в только что созданном кластере (cl[-1])
         for i in cl[-1]:
             # Проверяем все оставшиеся точки в 'a'
@@ -61,3 +60,60 @@ def dbscan(a, r):
                     cl[-1].append(j)  # Добавляем точку j в текущий кластер
                     a.remove(j)  # Удаляем её из общего списка, чтобы не обрабатывать дважды
     return cl
+
+
+""" Универсальная функция для теории игр. Шаблон для заданий №19-21.
+    Петя - П - Первый, Вася - В - Второй.
+"""
+
+"""
+ПРИМЕР ДЛЯ ОДНОЙ КУЧИ: 
+"""
+
+from functools import lru_cache
+
+@lru_cache(None)
+def game(heap):
+    if heap >= 39: #Например, дано такое условие в задаче, что если камней в куче больше или равно 39, то игра завершается
+        return 0
+    moves = [game(heap+1), game(heap+2), game(heap*2)] # Список со всеми возможными ходами в игре, берем из условия задачи
+    petya_win = [i for i in moves if i <= 0]
+    if petya_win:
+        return -max(petya_win)+1
+    else:
+        return -max(moves)
+
+for i in range(1, 38):
+    if game(i) == 1: # Если в данной позиции Петя побеждает первым ходом
+        print(i)
+
+"""
+ПРИМЕР ДЛЯ ДВУХ КУЧ:
+"""
+from functools import lru_cache
+@lru_cache(None)
+def game(first_heap, second_heap, count_moves): # Функция игры.
+    # count_moves - счётчик ходов в партии, его мы добавили для того,
+    # чтобы избежать ошибки превышения лимита рекурсии.
+    # Это работает следующим образом: если в партии больше 6 ходов, а партия не завершена,
+    # то такая партия нам не подходит, поскольку в задачах у нас просят значения,
+    # при которых Ваня или Петя побеждают максимум третьим ходом.
+    if first_heap * second_heap >= 2048: # Если произведение камней в кучах стало больше 2047
+        return 0 # Прекращаем игру
+    if count_moves > 6: # Если в игре больше 6 ходов
+        return 10**10 # Прерываем игру
+    # Генерация всех возможных ходов
+    moves = [game(first_heap, second_heap+1,count_moves+1), game(first_heap+1, second_heap,count_moves+1),
+             game(first_heap * 2, second_heap,count_moves+1),game(first_heap, second_heap * 2,count_moves+1)]
+    petya_win = [i for i in moves if i <= 0]
+    if petya_win: # Если в данной позиции есть выигрыш Пети
+        return -max(petya_win) + 1
+    else: # Если в данной позиции выигрыш Вани
+        return -max(moves)
+
+
+for i in range(1,187):
+    # Если в данной позиции возможен выигрыш Вани первым ходом
+    if game(11,i,0) == -1:
+        print(i)
+        break
