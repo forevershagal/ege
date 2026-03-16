@@ -1,5 +1,5 @@
 def f(a, b, c=0):
-    if a > b or a < 1:
+    if a > 16:
         return 0
     if a == b:
         return 1
