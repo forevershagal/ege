@@ -1,4 +1,4 @@
-f = open('')
+f = open('/Users/shagal/Desktop/shagalievv/Школково/Информатика/17/1/17_16__8hqqv.txt')
 a = [int(i) for i in f]
 m13 = max(i for i in a if abs(i) % 100 == 13)
 c = 0
@@ -11,4 +11,4 @@ for i in range(len(a)-8):
     if (sum(ch2) < (m13 ** 2)) and (len(nch) > len(ch)):
         c += 1
         mn = min(mn, sum(t))
-print(mn)
+print(c, mn)

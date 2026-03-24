@@ -1,4 +1,4 @@
-f = open('')
+f = open('/Users/shagal/Desktop/shagalievv/Школково/Информатика/17/1/17_20__8hqp5.txt')
 a = [int(i) for i in f]
 c = 0
 mn = 10**19
