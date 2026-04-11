@@ -1,4 +1,6 @@
 from math import dist
+from turtle import *
+tracer(0)
 
 def dbscan(a, r):
     cl = []
@@ -18,7 +20,6 @@ m = 20
 pairs = [(0, 1), (0, 2), (1, 2)]
 diams = []
 st_diams = []
-md_stars = []
 point = (2, 2)
 
 clusters = dbscan(a, r)
@@ -36,6 +37,17 @@ for i, j in pairs:
     st_diams.append(md_stars[1])
 
 q1 = sum(diams)
-q2 = max([dist(p, point) for p in st_diams])
+q2 = max(dist(p, point) for p in st_diams) # max dist from point to all in stars, which gived max
+
 print(int(q1*100), int(q2*100))
 
+
+
+# pu()
+# for j in clusters:
+#     if len(j) > 3:
+#         for i in j:
+#            x, y = i
+#            goto(x*m, y*m)
+#            dot(5)
+# done()
