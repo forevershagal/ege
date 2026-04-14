@@ -117,3 +117,18 @@ for i in range(1,187):
     if game(11,i,0) == -1:
         print(i)
         break
+
+
+# Для номера 14 чтобы определить значение буквы в латинице
+from string import ascii_lowercase
+
+a = '0123456789' + ascii_lowercase
+for i in range(len(a)):
+    print(i, a[i])
+
+def f(x):
+    s = ''
+    while x > 0:
+        s = a[x%13] + s
+        x //= 28
+    return s
